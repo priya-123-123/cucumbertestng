@@ -29,12 +29,24 @@ public class SystemUserSearchPage {
 	@FindBy(xpath="//button[@type='submit']") WebElement searchbtn;
 	@FindBy(xpath="//div[@class='orangehrm-horizontal-padding orangehrm-vertical-padding']//span[@class='oxd-text oxd-text--span']") WebElement noOfRecords;
 	@FindBy(xpath="//div[@role='cell']") List<WebElement> searchcellValue;
+	@FindBy(xpath="//ul//li//span[contains(text(),'Job')]") WebElement job;
+	
+	@FindBy(xpath="//ul//li//span[contains(text(),'Job')]//parent::li//ul//li//a[contains(text(),'Employment Status')]") WebElement empStatus;
 	public String getHeading() {
 		return heading.getText();
 	}
 	
 	public void enterUserName(String uname) {
 		username.sendKeys(uname);
+	}
+	
+	public void clickOnempStatus() {
+		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		wait.until(d -> empStatus.isDisplayed());
+		empStatus.click();
+	}
+	public void clickonJob() {
+		job.click();
 	}
 	 public void EnterAndSelectEmpName(String name) throws InterruptedException{
 	    	empName.sendKeys(name);
