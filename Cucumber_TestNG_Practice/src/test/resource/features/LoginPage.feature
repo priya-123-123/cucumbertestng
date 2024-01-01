@@ -16,7 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@Regression
 Feature: Login to HRM Application
   I want to test if I can test login to HRM Application
  
