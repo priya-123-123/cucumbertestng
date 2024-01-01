@@ -1,6 +1,9 @@
 package com.example.Cucumber_TestNG_Practice.definitions;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.cucumber.java.After;
@@ -12,26 +15,27 @@ import pageclasses.HomePage;
 import pageclasses.LoginPage;
 import pageclasses.SystemUserSearchPage;
 
-public class SystemUsersSearchPageDefinition extends BaseClass{
+public class SystemUsersSearchPageDefinition {
 	
 	HomePage hp;
 	LoginPage lp;
 	SystemUserSearchPage sp;
-	public WebDriver driver;
 	
-	@Before
-	public void setup() {
-		driver=getDriver();
-	}
+	
+	WebDriverContainer container;
+
+    public SystemUsersSearchPageDefinition(WebDriverContainer container){
+       this.container = container;
+    }
 
 	@Given("User is on HRMLogin page with url {string}")
 	public void user_is_on_hrm_login_page_with_url(String url) {
-		 driver.get(url);
+		 container.driver.get(url);
 	}
 
 	@When("User logged in as admin with username as {string} and password as {string}")
 	public void user_logged_in_as_admin_with_username_as_and_password_as(String userName, String password) {
-		lp=new LoginPage(driver);
+		lp=new LoginPage(container.driver);
 	    lp.enterUsername(userName);
 	    lp.enterpassword(password);
 	    lp.clickOnLoginButton();
@@ -44,20 +48,20 @@ public class SystemUsersSearchPageDefinition extends BaseClass{
 	}
 	@When("User clicks on Admin link on home page")
 	public void user_clicks_on_admin_link_on_home_page() {
-	    hp=new HomePage(driver);
+	    hp=new HomePage(container.driver);
 	    hp.getHeadingtext();
 	    hp.clickOnAdminLink();
 	}
 	@Then("User is on Admin System users page")
 	public void user_is_on_admin_system_users_page() {
-	    sp=new SystemUserSearchPage(driver);
+	    sp=new SystemUserSearchPage(container.driver);
 	    String heading = sp.getHeading();
 	    Assert.assertEquals(heading, "System Users");
 	}
 
 @When("User enters {string}")
 public void user_enters(String uname) {
-   sp=new SystemUserSearchPage(driver);
+   sp=new SystemUserSearchPage(container.driver);
    sp.enterUserName(uname);
 }
 
@@ -88,23 +92,24 @@ public void click_on_search_button() {
 
 @Then("User details must be displayed")
 public void user_details_must_be_displayed() {
+	
+   Assert.assertEquals(sp.getNoOfRecordsText(),"(1) Record Found");
    
 	
 }
-@After
-public void teardown() {
-	driver.close();
-}
+
 
 @Then("match with the searched criteria i.e {string}, {string}, {string} and {string}")
-public void match_with_the_searched_criteria_i_e_and(String string, String string2, String string3, String string4) {
-    
+public void match_with_the_searched_criteria_i_e_and(String userName, String UserRole, String EmpName, String Status
+) {
+    ArrayList<String> searchdetails=sp.getsearchUserDetails();
+    Assert.assertEquals(userName, searchdetails.get(1));
+    Assert.assertEquals(UserRole, searchdetails.get(2));
+    Assert.assertEquals(EmpName, searchdetails.get(3));
+    Assert.assertEquals(Status, searchdetails.get(4));
 }
 
-@Then("User details having roles as {string} must be displayed")
-public void user_details_having_roles_as_must_be_displayed(String string) {
-    
-}
+
 
 
 

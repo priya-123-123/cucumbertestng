@@ -33,11 +33,14 @@ Feature: Admin System User Search
     And User Enters "<Employee name>" and selects employee from the list
     And User selects status as  "<Status>"
     And  click on Search button
-    #Then User details must be displayed 
-    #And match with the searched criteria i.e "<Username>", "<User Role>", "<Employee name>" and "<Status>"
+    Then User details must be displayed 
+    And match with the searched criteria i.e "<Username>", "<User Role>", "<Employee name>" and "<Status>"
     
     Examples: 
       | Username         | User Role | Employee name    | Status   |
       | Anthony.Nolan |  ESS    | Anthony Nolan      | Enabled | 
+      |Chenzira.Chuki |  ESS    |Chenzira Chuki|Enabled|
+      |Peter.Anderson | Admin   |Peter Anderson |Enabled|
+      |Sara.Tencrady  |   ESS   | Sara Tencrady |Enabled|
 
       

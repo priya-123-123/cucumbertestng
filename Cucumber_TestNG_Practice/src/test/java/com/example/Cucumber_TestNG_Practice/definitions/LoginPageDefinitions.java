@@ -19,31 +19,31 @@ import pageclasses.HomePage;
 import pageclasses.LoginPage;
 
 
-public class LoginPageDefinitions extends BaseClass{
+public class LoginPageDefinitions {
 	
 	LoginPage lp;
 	HomePage hp;
-	public  WebDriver driver;
-	public final static int TIMEOUT = 5;
+	
 	
 	
 		
 	
-@Before
-public void setup() {
-	driver=getDriver();
-}
+	 WebDriverContainer container;
+
+	    public LoginPageDefinitions(WebDriverContainer container){
+	       this.container = container;
+	    }
 
 @Given("User is on HRMLogin page {string}")
 public void user_is_on_hrm_login_page(String url) {
 	
-    driver.get(url);
+	container.driver.get(url);
     
 }
 
 @When("User enters username as {string} and password as {string}")
 public void user_enters_username_as_and_password_as(String userName, String password) {
-	lp=new LoginPage(driver);
+	lp=new LoginPage(container.driver);
     lp.enterUsername(userName);
     lp.enterpassword(password);
     lp.clickOnLoginButton();
@@ -63,7 +63,7 @@ public void user_enters_username_as_and_password_as(String userName, String pass
 
 @Then("User should be able to login successfully and new page open")
 public void user_should_be_able_to_login_successfully_and_new_page_open() {
-   hp=new HomePage(driver);
+   hp=new HomePage(container.driver);
    String homePageHeading=hp.getHeadingtext();
    Assert.assertEquals(homePageHeading, "Dashboard");
    
@@ -75,10 +75,7 @@ public void user_should_be_able_to_see_error_message(String expectedErrorMessage
 	String actualErrorMessage = lp.getErrorMessage();
     Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
 }
-@After
-public void teardown() {
-	driver.quit();
-}
+
 
 
 }
