@@ -30,8 +30,8 @@ Feature: Add Employee Status
     Given User is on Employment status page
     When I enter name  in the Name field and click on save ,success message must be displayed as "Successfully Saved"
     |name|
-    |Full Time user5|
-    |Full Time user6|
+    |Full Time user11|
+    |Full Time user12|
     
    
     

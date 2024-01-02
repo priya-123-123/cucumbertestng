@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>8/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 01 16:10:35 IST 2024</td>
+<td>Started on:</td><td>Mon Jan 01 21:11:30 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>74 seconds (74110 ms)</td>
+<tr><td>Total time:</td><td>150 seconds (150534 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,36 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search a user by entering all fields i.e Username, User Role, Employee Name and Status", "Admin System User Search"</td>
+<td><div><pre>java.lang.AssertionError: expected [(1) Record Found] but found [(50) Records Found]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.example.Cucumber_TestNG_Practice.definitions.SystemUsersSearchPageDefinition.user_details_must_be_displayed(SystemUsersSearchPageDefinition.java:96)
+	at ✽.User details must be displayed(file:///C:/Users/BSR/git/CucumberTestNG/Cucumber_TestNG_Practice/src/test/resource/features/AdminSystemUsersSearch.feature:36)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1939354020", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1939354020'><pre>java.lang.AssertionError: expected [(1) Record Found] but found [(50) Records Found]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertEquals(Assert.java:125)
+	at org.testng.Assert.assertEquals(Assert.java:178)
+	at org.testng.Assert.assertEquals(Assert.java:188)
+	at com.example.Cucumber_TestNG_Practice.definitions.SystemUsersSearchPageDefinition.user_details_must_be_displayed(SystemUsersSearchPageDefinition.java:96)
+	at ✽.User details must be displayed(file:///C:/Users/BSR/git/CucumberTestNG/Cucumber_TestNG_Practice/src/test/resource/features/AdminSystemUsersSearch.feature:36)
+</pre></div></td>
+<td>20</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,25 +105,45 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with valid crdentials", "Login to HRM Application"</td>
+<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add Employee status multiple times", "Add Employee Status"</td>
+<td></td>
+<td>24</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
+<tr>
+<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search a user by entering all fields i.e Username, User Role, Employee Name and Status", "Admin System User Search"</td>
+<td></td>
+<td>20</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
+<tr>
+<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search a user by entering all fields i.e Username, User Role, Employee Name and Status", "Admin System User Search"</td>
+<td></td>
+<td>21</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
+<tr>
+<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Search a user by entering all fields i.e Username, User Role, Employee Name and Status", "Admin System User Search"</td>
 <td></td>
 <td>19</td>
-<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@48e1f6c7</td></tr>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
+<tr>
+<td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with valid crdentials", "Login to HRM Application"</td>
+<td></td>
+<td>10</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
 <tr>
 <td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid credentials", "Login to HRM Application"</td>
 <td></td>
-<td>18</td>
-<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@48e1f6c7</td></tr>
+<td>10</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
 <tr>
 <td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid credentials", "Login to HRM Application"</td>
 <td></td>
-<td>18</td>
-<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@48e1f6c7</td></tr>
+<td>11</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
 <tr>
 <td title='com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest.runScenario()'><b>runScenario</b><br>Test class: com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with invalid credentials", "Login to HRM Application"</td>
 <td></td>
-<td>17</td>
-<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@48e1f6c7</td></tr>
+<td>11</td>
+<td>com.example.Cucumber_TestNG_Practice.runner.CucumberRunnerTest@f1da57d</td></tr>
 </table><p>
 </body>
 </html>
